@@ -39,6 +39,11 @@ public class RestourantController {
         this.restourantService = restourantService;
     }
 
+    @RequestMapping(value = "/restourant/get_All_Restourants", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public List<Restourant> get_All_Restourants() {
+        return restourantService.listAll();
+    }
 
 
     @RequestMapping({"/restourant/listRestourant", "/restourant"})
